@@ -378,4 +378,162 @@ if (actual === expected) {
 
 console.log("===== 応用演習 =====");
 console.log("===== 1 =====");
+
+/**
+ * @param {any} arg1 - １つめの被演算子
+ * @param {any} arg2 - ２つめの被演算子
+ * @returns {any} ２つの被演算子を与えられた順番のまま || で評価したときと同じ結果
+ */
+// ここにコードを書きましょう
+const or = (arg1,arg2) => {
+  let result;
+  if (arg1) {
+    result = arg1;
+  } else {
+    if (arg2) {
+      result = arg2;
+    } else {
+      result =false;
+    }
+  }
+  return result;
+};
+
+actual = or(true, true);
+expected = true;
+
+if (actual === expected) {
+  console.log("OK! Test PASSED.");
+} else {
+  console.error("Test FAILED. Try again!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
+
+actual = or(true, false);
+expected = true;
+
+if (actual === expected) {
+  console.log("OK! Test PASSED.");
+} else {
+  console.error("Test FAILED. Try again!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
+
+// さらにテストを書いて、コードが正しいことを確認してください
+actual = or(false, false);
+expected = false;
+
+if (actual === expected) {
+  console.log("OK! Test PASSED.");
+} else {
+  console.error("Test FAILED. Try again!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
+
+actual = or(false, true);
+expected = true;
+
+if (actual === expected) {
+  console.log("OK! Test PASSED.");
+} else {
+  console.error("Test FAILED. Try again!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
+
+console.log("==========");
+
+actual = or("bananas", false);
+expected = "bananas";
+
+if (actual === expected) {
+  console.log("OK! Test PASSED.");
+} else {
+  console.error("Test FAILED. Try again!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
+
+actual = or("", "bananas");
+expected = "bananas";
+
+if (actual === expected) {
+  console.log("OK! Test PASSED.");
+} else {
+  console.error("Test FAILED. Try again!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
+
 console.log("===== 2 =====");
+
+/**
+ * @param {any} arg1 - 1 つめの被演算子
+ * @param {any} arg2 - 2 つめの被演算子
+ * @returns {any} 2 つの被演算子を与えられた順番のまま && で評価したときと同じ結果
+ */
+// ここにコードを書きましょう
+const and = (arg1,arg2) => {
+  let result;
+  if (arg1) {
+    if (arg2) {
+      result = true;
+    } else {
+      result = false;
+    }
+  } else {
+    result = arg1;
+  }
+  return result;
+};
+
+actual = and(true, true);
+expected = true;
+
+if (actual === expected) {
+  console.log("OK! Test PASSED.");
+} else {
+  console.error("Test FAILED. Try again!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
+
+actual = and(true, false);
+expected = false;
+
+if (actual === expected) {
+  console.log("OK! Test PASSED.");
+} else {
+  console.error("Test FAILED. Try again!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
+
+// さらにテストを書いて、コードが正しいことを確認してください
+
+console.log("==========");
+
+actual = and("bananas", false);
+expected = false;
+
+if (actual === expected) {
+  console.log("OK! Test PASSED.");
+} else {
+  console.error("Test FAILED. Try again!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
+
+actual = and("", "bananas");
+expected = "";
+
+if (actual === expected) {
+  console.log("OK! Test PASSED.");
+} else {
+  console.error("Test FAILED. Try again!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
